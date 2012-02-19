@@ -26,11 +26,11 @@ XPTinclude
 
 
 XPT inc " -include ..
--include( "`cursor^.hrl").
+-include("`cursor^.hrl").
 
 
 XPT def " -define ..
--define( `what^, `def^ ).
+-define(`what^, `def^).
 
 
 XPT ifdef " -ifdef ..\-endif..
