@@ -328,3 +328,23 @@ XPT genExp " \(func\(x) for x in seq)
 
 XPT listComp " \[func\(x) for x in seq]
 [`$SParg^`:_generator:^`$SParg^]
+
+
+XPT ae " self.assertEqual\(x, y)
+self.assertEqual(`first^, `second^)
+
+XPT aae " self.assertAlmostEqual\(x, y)
+self.assertAlmostEqual(`first^, `second^`, delta=`delta?^`, places=`places?^)
+
+XPT ai " self.assertIs\(x, y)
+self.assertIs(`first^, `second^)
+
+XPT aii " self.assertIsInstance\(obj, cls)
+self.assertIsInstance(`obj^, `cls^)
+
+XPT testcase " class SomethingTestCase\(...
+class `Something^TestCase(unittest.TestCase):
+    `:tc:^
+
+XPT tc " def test_case\(self):
+def test_`case^(self):
