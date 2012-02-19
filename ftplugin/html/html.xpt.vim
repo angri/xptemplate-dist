@@ -10,7 +10,7 @@ XPTinclude
 
 
 
-XPTvar $CURSOR_PH 
+XPTvar $CURSOR_PH
 
 XPTvar $CL    <!--
 XPTvar $CM
@@ -201,7 +201,9 @@ XSET doctype|post=html_doctype_post( V() )
 
 
 XPT html " <html><head>..<head><body>...
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+XSET doctype=html_doctype_list()
+XSET doctype|post=html_doctype_post( V() )
+<!DOCTYPE `doctype^>
 <html>
     `:head:^
     <body>
@@ -405,7 +407,7 @@ XPT fieldset " <fieldset ..
 " datetime-local
 " number
 " range
-" color 
+" color
 
 
 
