@@ -10,13 +10,13 @@ let s:f = g:XPTfuncs()
 XPTvar $PYTHON_EXC    /usr/bin/env python
 
 " 3 single quotes quoted by single quote
-XPTvar $PYTHON_DOC_MARK '''''
-" XPTvar $PYTHON_DOC_MARK '"""'
+" XPTvar $PYTHON_DOC_MARK '''''
+XPTvar $PYTHON_DOC_MARK '"""'
 
 " for python 2.5 and older
-XPTvar $PYTHON_EXP_SYM ', '
+" XPTvar $PYTHON_EXP_SYM ', '
 " " for python 2.6 and newer
-" XPTvar $PYTHON_EXP_SYM ' as '
+XPTvar $PYTHON_EXP_SYM ' as '
 
 
 XPTvar $TRUE          True
@@ -38,7 +38,7 @@ XPTvar $SPfun      ''
 " for ( ** statement ** )
 " [ ** a, b ** ]
 " { ** 'k' : 'v' ** }
-XPTvar $SParg      ' '
+XPTvar $SParg      ''
 
 " if ** (
 " while ** (
@@ -162,7 +162,7 @@ fun! s:f.python_find_func( default )
     endif
 
     return matchstr( getline( defIndent[0] ), '\Vdef\s\+\zs\w\+' )
-    
+
 endfunction
 
 " ================================= Snippets ===================================
@@ -190,9 +190,7 @@ XSET arg*|post=ExpandInsideEdge( ',$SPop', '' )
 
 
 XPT python " #!$PYTHON_EXC
-XSET encoding=Echo(&fenc != '' ? &fenc : &enc)
 #!`$PYTHON_EXC^
-# coding: `encoding^
 
 ..XPT
 
@@ -274,7 +272,7 @@ try:
 
 
 XPT except " except ..
-except `Exception^`$PYTHON_EXP_SYM`e^:
+except `Exception^`$PYTHON_EXP_SYM`exc^:
     `cursor^
 
 
